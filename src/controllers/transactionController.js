@@ -16,7 +16,7 @@ export async function createTransaction(req, res) {
   try {
     const { title, amount, category, user_id } = req.body;
 
-    if (!title || amount == 0 || !category || !user_id) {
+    if (!title || amount == undefined || !category || !user_id) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
